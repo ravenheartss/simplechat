@@ -77,15 +77,21 @@ io.on('connection', function(socket){
         // If first wird is /nick then change nickname and 
         // send a confirmation to client. 
         if (msg_split[0] === "/nick"){
-            user = msg_split[1];
-            let index_loc = users.indexOf(uid);
-            users[index_loc] = user;
-            socket.emit('change_uid', user);
-            io.emit('conn_users', users);
-            time = getTime();
-            let message = "Nicname changed to " + user;
-            discon_user = user;
-            socket.emit('chat', message, time, "Server", "#FFFFFF");
+            if (users.includes(msg_split[1])){
+                time = getTime();
+                let message = "Nickname already exists. Please choose another."
+                socket.emit('chat', message, time, "Server", "#FFFFFF");
+            }else{
+                user = msg_split[1];
+                let index_loc = users.indexOf(uid);
+                users[index_loc] = user;
+                socket.emit('change_uid', user);
+                io.emit('conn_users', users);
+                time = getTime();
+                let message = "Nicname changed to " + user;
+                discon_user = user;
+                socket.emit('chat', message, time, "Server", "#FFFFFF");
+            }
         }
         // If first word is /nickcolor then change colour and 
         // sned confirmation to client.
@@ -103,6 +109,12 @@ io.on('connection', function(socket){
                 time = getTime();
                 message = "Colour not valid. Please enter a colour in the form RRGGBB";
             }
+            socket.emit('chat', message, time, "Server", "#FFFFFF");
+        }
+
+        else if (msg_split[0].charAt(0) == '/'){
+            let message = "Unkown command: " + msg_split[0];
+            time = getTime();
             socket.emit('chat', message, time, "Server", "#FFFFFF");
         }
 
