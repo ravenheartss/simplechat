@@ -64,9 +64,8 @@ io.on('connection', function(socket){
     socket.on('setup', function(uid){
         if(!users.includes(uid)){
             users.push(uid);
-            uu = uid;
+            discon_user = uid;
         }
-        
         io.emit('conn_users', users);
         socket.emit('messages', message_history);
     });
@@ -85,6 +84,7 @@ io.on('connection', function(socket){
             io.emit('conn_users', users);
             time = getTime();
             let message = "Nicname changed to " + user;
+            discon_user = user;
             socket.emit('chat', message, time, "Server", "#FFFFFF");
         }
         // If first word is /nickcolor then change colour and 
