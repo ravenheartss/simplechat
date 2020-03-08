@@ -1,0 +1,45 @@
+<!-- SENG 513 Assignment 3 -- Winter 2020
+Name: Shankar Ganesh
+UCID: 30055527
+Tutorial/Lab: T01/B01 -->
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="me.css">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    </head>
+
+<body>
+    <div class="container mt-4">
+
+        <div class="user_list">
+            <div class="user_list_head">
+                <h5>Online Users</h5>
+            </div>
+            <div class="online_users">
+
+            </div>
+        </div>
+
+        <div class="msgs_chat">
+            <div class="content">
+                
+            </div>
+
+            <div class="msg_input">
+                <form id="sendMessage" action="">
+                    <input class="input_msg" placeholder="Type here to send a message"/>
+                    <button class="button">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="client.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+/* SENG 513 Assignment 3 -- Winter 2020
+Name: Shankar Ganesh
+UCID: 30055527
+Tutorial/Lab: T01/B01 */
+
+body{
+    background-color: #121212;
+}
+
+*{
+    color: white;
+}
+
+
+.container{
+    max-width:100%; 
+    margin:auto;
+    display: flex;
+}
+
+.user_list{
+    flex: 0 0 15%;
+    height: auto;
+    max-height: 100%;
+    color: white;
+}
+
+.msgs_chat{
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.messages {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+.msg {
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.incoming {
+    align-items: flex-start;
+  }
+  
+.incoming .msg{
+    margin-right: 25%;
+    background-color: #2c2c2c;
+    position: relative;
+    color: white;
+}
+  
+.outg {
+    align-items: flex-end;
+}
+  
+.outg .msg {
+    
+    margin-left: 25%;
+    background: #2c2c2c;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.content {
+    width: 100%;
+    border-left: solid 1px #2c2c2c;
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 10px;
+    height: 40vmax;
+    flex-grow: 1;
+    overflow: auto;
+    align-items: stretch;
+}
+
+img{
+    float: left;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+}
+
+
+.online_users{
+    overflow-y: scroll;
+    overflow-x: auto;
+    height: auto;
+    max-height: 40vmax;
+}
+
+.online_users::-webkit-scrollbar {
+    display: none;
+}
+
+
+.usr{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 1.2rem;
+    background: #181818;
+}
+
+.msg_input{
+    width: 100%;
+    padding: 4px 4px 4px 4px;
+
+}
+
+.input_msg{
+    height: 40px;
+    width: 96%;
+    background: #181818;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-style: solid;
+    border-radius: 15%;
+    border-color: #2c2c2c;
+}
+
+.button{
+    padding: 4px;
+    background-color:  #181818;
+    color: white;
+    border-style: none;
+}
+
